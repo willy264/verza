@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Codystar:wght@300;400&family=Goldman:wght@400;700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Urbanist', sans-serif;
+    overflow-x: hidden;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  button {
+    font-family: 'Urbanist', sans-serif;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  input {
+    font-family: 'Urbanist', sans-serif;
+  }
+
+  button:focus,
+  button:focus-visible,
+  input:focus,
+  input:focus-visible {
+    outline: none;
+  }
+}
+
+@layer utilities {
+  .font-goldman {
+    font-family: 'Goldman', sans-serif;
+  }
+
+  .font-urbanist {
+    font-family: 'Urbanist', sans-serif;
+  }
+
+  .font-codsytar {
+    font-family: 'Codsytar', monospace;
+  }
+
+  .gradient-green {
+    background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+  }
+
+  .text-gradient-green {
+    background: linear-gradient(135deg, #22C55E 0%, #00D492 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .border-gradient-green {
+    position: relative;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  .border-gradient-green::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #22C55E 0%, #00D492 100%);
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .glow-green {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+  }
+
+  .glow-green-lg {
+    box-shadow: 0 0 40px rgba(34, 197, 94, 0.3);
+  }
+
+  .text-green-primary {
+    color: #22C55E;
+  }
+
+  .text-green-secondary {
+    color: #00D492;
+  }
+
+  .text-green-dark {
+    color: #16A34A;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translate(-50%, 0) scale(1.2);
+  }
+}
